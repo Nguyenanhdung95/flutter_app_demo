@@ -1,12 +1,11 @@
 [build]
-  command = "flutter build web"
+  command = "flutter build web --release"
   publish = "build/web"
 
 [build.environment]
   FLUTTER_VERSION = "3.24.0"
 
-[context.production.environment]
-  PATH = "/opt/buildhome/flutter/bin:/opt/buildhome/flutter/bin/cache/dart-sdk/bin:$PATH"
-
-[[plugins]]
-  package = "netlify-plugin-flutter"
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
